@@ -37,6 +37,34 @@ const Navbar = () => {
         <FaGooglePlusG className="mx-4" />
         <FaInstagram className="mx-4" />
       </div>
+      {/* Hamburger Icon */}
+      <div onClick={handleNav} className="z-10 sm:hidden">
+        <FaBars size={20} className="mr-4 cursor-pointer" />
+      </div>
+      {/* Mobile Menu */}
+      <div
+        onClick={handleNav}
+        className={
+          nav
+            ? 'overflow-y-hidden md:hidden ease-in duration-300 absolute text-gray-300 left-0 top-0 w-full h-screen bg-black/90 px-4 py-7 flex flex-col'
+            : 'absolute top-0 h-screen left-[-100%] ease-in duration-500'
+        }
+      >
+        <ul className="w-full h-full pt-12 text-center">
+          <li className="py-8 text-2xl">
+            <a href="/">Home</a>
+          </li>
+          <li className="py-8 text-2xl">
+            <a href="#gallery">Gallery</a>
+          </li>
+          <li className="py-8 text-2xl">
+            <a href="#deals">Deals</a>
+          </li>
+          <li className="py-8 text-2xl">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
